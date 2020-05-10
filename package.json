@@ -1,44 +1,74 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "pizza-porter",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Website for the pizza-porter business",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Fabio Berta <fnberta@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fnberta/pizza-porter-website"
+  },
+  "bugs": {
+    "url": "https://github.com/fnberta/pizza-porter-website/issues"
+  },
+  "scripts": {
+    "start": "yarn dev",
+    "build": "gatsby build",
+    "dev": "gatsby develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "jest",
+    "lint": "eslint --fix 'src/**/*.{ts,tsx,js,jsx}'",
+    "format": "prettier --write '**/*.{js,jsx,ts,tsx,json,css,scss,sass,md,yml,yaml}'",
+    "gen-graphql": "graphql-codegen --config gql.yml"
+  },
   "dependencies": {
     "gatsby": "^2.21.21",
     "gatsby-image": "^2.4.3",
-    "gatsby-plugin-manifest": "^2.4.2",
-    "gatsby-plugin-offline": "^3.2.1",
     "gatsby-plugin-react-helmet": "^3.3.1",
     "gatsby-plugin-sharp": "^2.6.2",
     "gatsby-source-filesystem": "^2.3.1",
     "gatsby-transformer-sharp": "^2.5.2",
-    "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0"
   },
   "devDependencies": {
-    "prettier": "2.0.5"
+    "@graphql-codegen/cli": "^1.13.5",
+    "@graphql-codegen/typescript": "1.13.5",
+    "@graphql-codegen/typescript-operations": "1.13.5",
+    "@tailwindcss/ui": "^0.3.0",
+    "@types/node": "^13.13.5",
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.7",
+    "@types/react-helmet": "^5.0.15",
+    "confusing-browser-globals": "^1.0.9",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "graphql": "^15.0.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.2",
+    "prettier": "2.0.5",
+    "tailwindcss": "^1.4.6",
+    "typescript": "^3.8.3"
   },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  "lint-staged": {
+    "**/*.{ts,tsx,js,jsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "**/*.{json,css,scss,sass,md,yml,yaml}": [
+      "prettier --write"
+    ]
   }
 }
