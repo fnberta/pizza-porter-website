@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Pizza-Porter',
-    description: 'Pizza napoletana & Coffee',
+    description: 'Pizza Napoletana & Coffee',
     author: 'Fabio Berta',
   },
   plugins: [
